@@ -11,26 +11,27 @@
 
       "services": {
           "type": "array",
-          
+
           "items": {
               "type": "object",
               "properties": {
-                  
+
                   "name": {
                       "type": "string",
                       "title": "name of service"
                   },
-                  
+
                   "validTill": {
                       "type": "string",
                       "title": "Expiry time for this SPAD file"
                   },
-                  
+
                   "flows": {
                       "type": "array",
                       "uniqueItems": false,
                       "title": "Transport List",
-                      "description": "List of transports used by the application.",
+                      "description": "List of transports used by the
+                      application.",
                       "items": {
                           "type": "object",
                           "title": "Flow",
@@ -45,24 +46,27 @@
                                   }
                               },
                               "port": {
-                                  
+
                                   "type": "integer",
                                   "maximum": 65535,
                                   "minimum": 1,
                                   "title": "port",
-                                  "description": "Destination ports used by the transport protocol."
-                                  
+                                  "description": "Destination ports
+                                  used by the transport protocol."
+
                               },
                               "name": {
                                   "type": "string",
                                   "title": "DNS name",
-                                  "description": "DNS name that will be used to connect to."
-                                  
+                                  "description": "DNS name that will
+                                  be used to connect to."
+
                               },
                               "qos":  {
                                   "type": "string",
                                   "title": "DSCP",
-                                  "description": "Differentiated Services Code Point to use.",
+                                  "description": "Differentiated
+                                  Services Code Point to use.",
                                   "enum": [
                                       "CS1",
                                       "DF",

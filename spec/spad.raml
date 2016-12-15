@@ -11,16 +11,16 @@ schemas:
 documentation:
  - title: Overview
    content: !include overview.md
-   
+
 /transports:
-  description: Transports used by this service 
+  description: Transports used by this service
   get:
-    description: Retrieve the spad 
+    description: Retrieve the spad
     responses:
        200:
-         description: Return SPAD file - see https://fluffy.github.io/spad/schemas/ 
+         description: Return SPAD file -
+         see https://fluffy.github.io/spad/schemas/ 
          body:
           application/json:
             schema: spad.json
             example: !include example1.json
-            

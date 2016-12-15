@@ -4,8 +4,8 @@
 
 Network Working Group                                        C. Jennings
 Internet-Draft                                                     Cisco
-Intended status: Standards Track                       November 12, 2016
-Expires: May 16, 2017
+Intended status: Standards Track                       December 15, 2016
+Expires: June 18, 2017
 
 
                    Simple Port and Address Discovery
@@ -13,9 +13,9 @@ Expires: May 16, 2017
 
 Abstract
 
-   This specification defines a simple JSON format and well known URL
-   for firewalls and other devices to discover whats IP addresses,
-   ports, and related transports a given cloud services uses.
+   This specification defines a simple JSON format and well-known URL
+   for firewalls and other devices to discover what IP addresses, ports,
+   and related transports a given cloud service uses.
 
 Status of This Memo
 
@@ -32,7 +32,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on May 16, 2017.
+   This Internet-Draft will expire on June 18, 2017.
 
 Copyright Notice
 
@@ -53,37 +53,41 @@ Copyright Notice
 
 
 
-Jennings                  Expires May 16, 2017                  [Page 1]
+Jennings                  Expires June 18, 2017                 [Page 1]
 
-Internet-Draft                    SPAD                     November 2016
+Internet-Draft                    SPAD                     December 2016
 
 
 Table of Contents
 
    1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   2
    2.  Terminology . . . . . . . . . . . . . . . . . . . . . . . . .   2
-   3.  Example . . . . . . . . . . . . . . . . . . . . . . . . . . .   2
-   4.  Blueprint . . . . . . . . . . . . . . . . . . . . . . . . . .   4
-   5.  Schemas . . . . . . . . . . . . . . . . . . . . . . . . . . .   4
-   6.  IANA Consideration  . . . . . . . . . . . . . . . . . . . . .   7
-   7.  Security Considerations . . . . . . . . . . . . . . . . . . .   7
-   8.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .   7
-   9.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   7
-     9.1.  Normative References  . . . . . . . . . . . . . . . . . .   7
-     9.2.  Informative References  . . . . . . . . . . . . . . . . .   7
-   Appendix A.  Contributing . . . . . . . . . . . . . . . . . . . .   7
-   Appendix B.  Published Versions . . . . . . . . . . . . . . . . .   8
-   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .   8
+   3.  Examples  . . . . . . . . . . . . . . . . . . . . . . . . . .   2
+   4.  RAML  . . . . . . . . . . . . . . . . . . . . . . . . . . . .   4
+   5.  Schemas . . . . . . . . . . . . . . . . . . . . . . . . . . .   5
+   6.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   8
+   7.  Security Considerations . . . . . . . . . . . . . . . . . . .   8
+   8.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .   8
+   9.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   8
+     9.1.  Normative References  . . . . . . . . . . . . . . . . . .   8
+     9.2.  Informative References  . . . . . . . . . . . . . . . . .   8
+   Appendix A.  Development of this Specification  . . . . . . . . .   8
+     A.1.  Specification Style . . . . . . . . . . . . . . . . . . .   8
+     A.2.  Following Discussion  . . . . . . . . . . . . . . . . . .   9
+     A.3.  Resolving Issues  . . . . . . . . . . . . . . . . . . . .   9
+     A.4.  Pull Requests . . . . . . . . . . . . . . . . . . . . . .   9
+     A.5.  Published Versions  . . . . . . . . . . . . . . . . . . .  10
+   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  10
 
 1.  Introduction
 
-   Simple Port and Address Discovery (SPAD) allows an web application to
+   Simple Port and Address Discovery (SPAD) allows a web application to
    inform others of what ports and IP addresses it uses so that things
-   like firewalls can correctly re-configure themsleves as the ports and
+   like firewalls can correctly re-configure themselves as the ports and
    addresses change.  Applications are identified by a domain name which
-   is used to form a URL in a well known location where a client can do
-   a HTTP REST call to get a JSON file that describes information about
-   what addresses and transport the service uses.
+   is used to form a URL in a well-known location where a client can do
+   an HTTPS REST call to get a JSON file that describes information
+   about what addresses and transports the service uses.
 
 2.  Terminology
 
@@ -97,24 +101,24 @@ Table of Contents
    JSON Schema is defined at <http://json-schema.org/>.  Further
    information is available in [I-D.wright-json-schema].
 
-3.  Example
+3.  Examples
 
    To figure out what IP addresses are used by the service example.com,
    the first step is to form the query URL by constructing an endpoint
    at ".well-known/spad/v0/spad".
 
+
+
+Jennings                  Expires June 18, 2017                 [Page 2]
+
+Internet-Draft                    SPAD                     December 2016
+
+
    Then an HTTPS GET query is done that to that URL.
 
              curl https://example.com/.well-known/spad/v0/spad
 
-
-
-Jennings                  Expires May 16, 2017                  [Page 2]
-
-Internet-Draft                    SPAD                     November 2016
-
-
-   The responses would be a JSON result that could looks like
+   The response would be a JSON result that could look like
 
             {
               "domain": "example.com",
@@ -136,17 +140,17 @@ Internet-Draft                    SPAD                     November 2016
             }
 
    The example above indicates that the "example.com" application has a
-   single service with a single flow that uses only the HTTPS to connect
-   to port 443 on the IP address "203.0.113.2".  This SPAD information
-   is not valid after "Fri 11 Nov 2016 22:20:08 UTC" and a new SPAD file
+   single service with a single flow that uses only HTTPS to connect to
+   port 443 on the IP address "203.0.113.2".  This SPAD information is
+   not valid after "Fri 11 Nov 2016 22:20:08 UTC" and a new SPAD file
    should be retrieved before that point in time.
 
    The following shows a more complex example result for an application
-   that uses two flows.  One is TLS to the SIP port of a server with an
+   that uses two flows.  One is TLS to the SIP port of a server with a
    v4 and v6 address.  The TLS connection will have a name of
    example.com in the SNI.  The other flow is media sent over UDP to
    port 5004 on a few different ip addresses.  If devices in the network
-   are capable of remarking DSCP, the desired marking is "AF41".
+   are capable of re-marking DSCP, the desired marking is "AF41".
 
 
 
@@ -161,13 +165,9 @@ Internet-Draft                    SPAD                     November 2016
 
 
 
-
-
-
-
-Jennings                  Expires May 16, 2017                  [Page 3]
+Jennings                  Expires June 18, 2017                 [Page 3]
 
-Internet-Draft                    SPAD                     November 2016
+Internet-Draft                    SPAD                     December 2016
 
 
             {
@@ -200,145 +200,201 @@ Internet-Draft                    SPAD                     November 2016
               ]
             }
 
-4.  Blueprint
+4.  RAML
 
-   The Bluprint specification for the API is:
+   The RAML specification for the API is:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Jennings                  Expires June 18, 2017                 [Page 4]
+
+Internet-Draft                    SPAD                     December 2016
+
+
+          #%RAML 0.8
+          title: SPAD
+          version: v0
+          protocols: [ HTTPS ]
+          baseUri: https://example.com/.well-known/spad/{version}
+          mediaType: application/json
+
+          schemas:
+           - spad.json: !include spad-schema.json
+
+          documentation:
+           - title: Overview
+             content: !include overview.md
+
+          /transports:
+            description: Transports used by this service
+            get:
+              description: Retrieve the spad
+              responses:
+                 200:
+                   description: Return SPAD file -
+                   see https://fluffy.github.io/spad/schemas/
+                   body:
+                    application/json:
+                      schema: spad.json
+                      example: !include example1.json
 
 5.  Schemas
 
-   The JSON returned from MUST corespond to the following JSON schema.
+   The JSON returned in a response MUST correspond to the following JSON
+   schema:
 
-{
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "type": "object",
-  "title": "SPAD schema.",
-  "properties": {
+   {
+     "$schema": "http://json-schema.org/draft-04/schema#",
+     "type": "object",
+     "title": "SPAD schema.",
+     "properties": {
 
-      "domain": {
-          "type": "string",
-          "title": "TODO"
-      },
+         "domain": {
+             "type": "string",
+             "title": "TODO"
+         },
+
+         "services": {
+             "type": "array",
+
+             "items": {
+                 "type": "object",
 
 
 
-Jennings                  Expires May 16, 2017                  [Page 4]
+Jennings                  Expires June 18, 2017                 [Page 5]
 
-Internet-Draft                    SPAD                     November 2016
+Internet-Draft                    SPAD                     December 2016
 
 
-      "services": {
-          "type": "array",
+                 "properties": {
 
-          "items": {
-              "type": "object",
-              "properties": {
+                     "name": {
+                         "type": "string",
+                         "title": "name of service"
+                     },
 
-                  "name": {
-                      "type": "string",
-                      "title": "name of service"
-                  },
+                     "validTill": {
+                         "type": "string",
+                         "title": "Expiry time for this SPAD file"
+                     },
 
-                  "validTill": {
-                      "type": "string",
-                      "title": "Expiry time for this SPAD file"
-                  },
+                     "flows": {
+                         "type": "array",
+                         "uniqueItems": false,
+                         "title": "Transport List",
+                         "description": "List of transports used by the
+                         application.",
+                         "items": {
+                             "type": "object",
+                             "title": "Flow",
+                             "properties": {
+                                 "ips": {
+                                     "type": "array",
+                                     "uniqueItems": false,
+                                     "title": "IP addresses list",
+                                     "items": {
+                                         "type": "string",
+                                         "title": "IPv4 or v6 address"
+                                     }
+                                 },
+                                 "port": {
 
-                  "flows": {
-                      "type": "array",
-                      "uniqueItems": false,
-                      "title": "Transport List",
-                      "description": "List of transports used by the application.",
-                      "items": {
-                          "type": "object",
-                          "title": "Flow",
-                          "properties": {
-                              "ips": {
-                                  "type": "array",
-                                  "uniqueItems": false,
-                                  "title": "IP addresses list",
-                                  "items": {
-                                      "type": "string",
-                                      "title": "IPv4 or v6 address"
-                                  }
-                              },
-                              "port": {
+                                     "type": "integer",
+                                     "maximum": 65535,
+                                     "minimum": 1,
+                                     "title": "port",
+                                     "description": "Destination ports
+                                     used by the transport protocol."
 
-                                  "type": "integer",
-                                  "maximum": 65535,
-                                  "minimum": 1,
-                                  "title": "port",
-                                  "description": "Destination ports used by the transport protocol."
+                                 },
+                                 "name": {
+                                     "type": "string",
+                                     "title": "DNS name",
+                                     "description": "DNS name that will
+                                     be used to connect to."
 
-                              },
-                              "name": {
-                                  "type": "string",
-                                  "title": "DNS name",
-                                  "description": "DNS name that will be used to connect to."
+                                 },
 
 
 
-Jennings                  Expires May 16, 2017                  [Page 5]
+Jennings                  Expires June 18, 2017                 [Page 6]
 
-Internet-Draft                    SPAD                     November 2016
+Internet-Draft                    SPAD                     December 2016
 
 
-                              },
-                              "qos":  {
-                                  "type": "string",
-                                  "title": "DSCP",
-                                  "description": "Differentiated Services Code Point to use.",
-                                  "enum": [
-                                      "CS1",
-                                      "DF",
-                                      "EF",
-                                      "AF11",
-                                      "AF21",
-                                      "AF41",
-                                      "AF42",
-                                      "AF43",
-                                      "AF31",
-                                      "AF32",
-                                      "AF33"
-                                  ]
-                              },
-                              "protocols": {
-                                  "title": "Transport Protocol List",
-                                  "description": "Protocols used.",
-                                  "type": "string",
-                                  "title": "protocol",
-                                  "enum": [
-                                      "udp",
-                                      "tcp",
-                                      "http",
-                                      "tls",
-                                      "https",
-                                      "quic"
-                                  ]
-                              }
-                          }
-                      }
-                  }
-              }
-          }
-      }
-  },
-  "required": [
-    "domain",
-    "services"
-  ]
-}
-
-
-
+                                 "qos":  {
+                                     "type": "string",
+                                     "title": "DSCP",
+                                     "description": "Differentiated
+                                     Services Code Point to use.",
+                                     "enum": [
+                                         "CS1",
+                                         "DF",
+                                         "EF",
+                                         "AF11",
+                                         "AF21",
+                                         "AF41",
+                                         "AF42",
+                                         "AF43",
+                                         "AF31",
+                                         "AF32",
+                                         "AF33"
+                                     ]
+                                 },
+                                 "protocols": {
+                                     "title": "Transport Protocol List",
+                                     "description": "Protocols used.",
+                                     "type": "string",
+                                     "title": "protocol",
+                                     "enum": [
+                                         "udp",
+                                         "tcp",
+                                         "http",
+                                         "tls",
+                                         "https",
+                                         "quic"
+                                     ]
+                                 }
+                             }
+                         }
+                     }
+                 }
+             }
+         }
+     },
+     "required": [
+       "domain",
+       "services"
+     ]
+   }
 
 
 
-Jennings                  Expires May 16, 2017                  [Page 6]
+
+
+
+Jennings                  Expires June 18, 2017                 [Page 7]
 
-Internet-Draft                    SPAD                     November 2016
+Internet-Draft                    SPAD                     December 2016
 
 
-6.  IANA Consideration
+6.  IANA Considerations
 
    TODO - register well known URL usage
 
@@ -350,15 +406,15 @@ Internet-Draft                    SPAD                     November 2016
 
 8.  Acknowledgements
 
-   Thank you for the contributions from: Cullen Jennings
+   TODO - add acknowledgments
 
 9.  References
 
 9.1.  Normative References
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
-              Requirement Levels", BCP 14, RFC 2119, DOI 10.17487/
-              RFC2119, March 1997,
+              Requirement Levels", BCP 14, RFC 2119,
+              DOI 10.17487/RFC2119, March 1997,
               <http://www.rfc-editor.org/info/rfc2119>.
 
 9.2.  Informative References
@@ -370,58 +426,112 @@ Internet-Draft                    SPAD                     November 2016
 
 9.3.  URIs
 
-   [1] https://datatracker.ietf.org/doc/draft-jennings-dispatch-spad-
+   [1] https://www.ietf.org/mailman/listinfo/spad
+
+   [2] https://github.com/fluffy/spad/issues
+
+   [3] https://www.ietf.org/mailman/listinfo/spad-issues
+
+   [4] https://datatracker.ietf.org/doc/draft-jennings-dispatch-spad-
        v0-00/
 
-Appendix A.  Contributing
+Appendix A.  Development of this Specification
 
-   We welcome all contributions.  Discussion happens in the
-   <https://spadwg.slack.com/messages/general/> room in slack and on
-   GitHub issue threads at (<https://github.com/fluffy/spad/issues>).
-   Changes are done via git pull requests.  For PsR merged into the
-   master branch, we strive for rough consensus and we measure that by
-   the reviews placed on the PR.
+A.1.  Specification Style
 
-   The Specification style is "less is more".  If a reasonable developer
+   The specification style is "less is more."  If a reasonable developer
    who is fully up on modern web development practices could figure out
    how write an interoperable implementation after looking at some
-   examples and code and asking a few questions, well that's good enough
 
 
 
-Jennings                  Expires May 16, 2017                  [Page 7]
+Jennings                  Expires June 18, 2017                 [Page 8]
 
-Internet-Draft                    SPAD                     November 2016
+Internet-Draft                    SPAD                     December 2016
 
 
+   examples and code and asking a few questions, well that's good enough
    for us.  If you can find it on Wikipedia, we don't need to explain it
    here.
 
-   Markdown is used for text.  RAML and JSON Schema are used to describe
-   the API.  Examples are often used as normative specification.  The
-   build chain has the goal is to be simple and obvios with no black
-   magic.
+   The build chain allows for an internet draft to be produced from
+   separate parts: a basic draft skeleton that includes narrative text;
+   examples; an API specification; and a schema.  Markdown is used for
+   text.  RAML and JSON Schema are used to describe the API.  Examples
+   play a central role in the specification.  The build chain has the
+   goal of being simple and obvious with no black magic.
 
-Appendix B.  Published Versions
+A.2.  Following Discussion
 
-   The website at (<https://fluffy.github.io/spad/>) provides an
-   overview view of the specification that is focused on developers.
-   However all the key information to implement the specification that
-   is used to generate the website is also used to generate and internet
-   draft that can be found at draft-jennings-dispatch-spad-v0 [1] that
-   is slanted at specification developers.  Periodically the information
-   on the master is branched to versioned draft branch and published and
-   an internet draft.  A typical cadence for this is monthly so that it
-   can receiver broader review.  If the PRs that were merged to master
-   represent WG rough consensus, it is expected that it the will move
-   quickly through the standards process.  When the work is at a good
-   point to form a version of the API, it is progressed to an RFC and
-   the text of the approved RFC is used to form a released version of
-   the spec.  The first version would be v1.  The current working pre
-   standard version is always referred to as v0.  The API includes the
-   version in the URL so that developers can implement to a specific non
-   changing specification.  Future versions attempt, but do not
-   guarantee, to be backwards comptable with the previos version.
+   We welcome all contributions.  Discussion takes place in a few
+   places:
+
+   o  Our mailing list [1] is used for most communication, including
+      issue discussion.
+
+   o  We also discuss specific issues on the appropriate issues list in
+      Github [2].  If you don't want to use Github to follow these
+      discussions, you can subscribe to the issue announce list [3].
+
+A.3.  Resolving Issues
+
+   Consensus for the resolution of an issue can be established in a few
+   different ways:
+
+   o  Through discussion on the mailing list.  Once a resolution is
+      found, it will be recorded in the issue.
+
+   o  Through discussion on the issues list.  Once a resolution is
+      found, it will be confirmed on the mailing list before consensus
+      is declared.
+
+   The editors can also propose resolutions for the group's
+   consideration by incorporating them into the draft; when doing so,
+   the issue should not be closed until consensus is declared.
+
+   Issues that have consensus will be labelled as "editor-ready".  After
+   the editor has incorporated a resolution into the specification, the
+   issue can be closed.
+
+A.4.  Pull Requests
+
+   We welcome pull requests, both for editorial suggestions and to
+   resolve open issues.  In the latter case, please identify the
+   relevant issue.
+
+
+
+Jennings                  Expires June 18, 2017                 [Page 9]
+
+Internet-Draft                    SPAD                     December 2016
+
+
+   Please do not use a pull request to open a new design issue; it may
+   not be noticed.
+
+A.5.  Published Versions
+
+   The web site at (<https://fluffy.github.io/spad/>) provides an
+   overview of the specification that is focused on a developer
+   audience.  However, all the key information to implement the
+   specification that is used to generate the web site is also used to
+   generate and internet draft that can be found at draft-jennings-
+   dispatch-spad-v0 [4].
+
+   Periodically the information on the master is branched to a versioned
+   draft branch and the content of that branch is used to produce an
+   updated version of the internet draft.  A typical cadence for this is
+   monthly so that the draft can receive broader review.
+
+   When the work is at a good point to form a stable version of the API,
+   it is progressed through the IETF publication process with the goal
+   of publishing an RFC.  Once approved, the text of the RFC is used to
+   form a released version of the API.  The first version would be v1.
+   The current working pre-standard version is always referred to as v0.
+   The API includes the version in the URL so that developers can
+   implement to a specific non-changing specification.  Future versions
+   attempt, but do not guarantee, to be backwards-compatible with the
+   previous version.
 
 Author's Address
 
@@ -445,4 +555,6 @@ Author's Address
 
 
 
-Jennings                  Expires May 16, 2017                  [Page 8]
+
+
+Jennings                  Expires June 18, 2017                [Page 10]
