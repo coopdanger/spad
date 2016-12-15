@@ -1,4 +1,4 @@
-baseurl: https://fluffy.github.io/spad/
+baseurl: https://coopdanger.github.io/spad/
 languageCode: en-us
 title: SPAD Spec Site
 #theme: hugo-material-docs
@@ -21,7 +21,7 @@ params:
   sidebarFreeText: 
   provider: GitHub
   copyright: TODO6
-  repo_url: https://github.com/fluffy/spad
+  repo_url: https://github.com/coopdanger/spad
   brand: NONE1
   subtitle: NONE2
   #showLeftSidebar: true
