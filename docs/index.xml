@@ -389,9 +389,9 @@ chain has the goal of being simple and obvious with no black magic.&lt;/p&gt;
 &lt;p&gt;We welcome all contributions. Discussion takes place in a few places:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Our &lt;a href=&#34;https://www.ietf.org/mailman/listinfo/spad&#34;&gt;mailing list&lt;/a&gt; is used for most communication, including issue discussion.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;We discuss specific issues on the appropriate issues list in &lt;a href=&#34;https://github.com/fluffy/spad/issues&#34;&gt;Github&lt;/a&gt;. If you don&#39;t want to use Github to follow these discussions, you can subscribe to the &lt;a href=&#34;https://www.ietf.org/mailman/listinfo/spad-issues&#34;&gt;issue announce list&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;We also discuss specific issues on the appropriate issues list in &lt;a href=&#34;https://github.com/fluffy/spad/issues&#34;&gt;Github&lt;/a&gt;. If you don&#39;t want to use Github to follow these discussions, you can subscribe to the &lt;a href=&#34;https://www.ietf.org/mailman/listinfo/spad-issues&#34;&gt;issue announce list&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Our &lt;a href=&#34;https://www.ietf.org/mailman/listinfo/spad&#34;&gt;mailing list&lt;/a&gt; is used for confirmation of consensus.&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&#34;resolving-issues&#34;&gt;Resolving Issues&lt;/h2&gt;
@@ -406,7 +406,7 @@ chain has the goal of being simple and obvious with no black magic.&lt;/p&gt;
 
 &lt;h2 id=&#34;published-versions&#34;&gt;Published Versions&lt;/h2&gt;
 
-&lt;p&gt;The web site at (&lt;a href=&#34;https://fluffy.github.io/spad/&#34;&gt;https://fluffy.github.io/spad/&lt;/a&gt;) provides an overview of the specification that is focused on a developer audience. However, all
+&lt;p&gt;The web site at (&lt;a href=&#34;https://coopdanger.github.io/spad/&#34;&gt;https://coopdanger.github.io/spad/&lt;/a&gt;) provides an overview of the specification that is focused on a developer audience. However, all
 the key information to implement the specification that is used to
 generate the web site is also used to generate and internet draft that
 can be found at &lt;a href=&#34;https://datatracker.ietf.org/doc/draft-jennings-dispatch-spad-v0-00/&#34;&gt;draft-jennings-dispatch-spad-v0&lt;/a&gt;.&lt;/p&gt;
@@ -799,9 +799,9 @@ chain has the goal of being simple and obvious with no black magic.&lt;/p&gt;
 &lt;p&gt;We welcome all contributions. Discussion takes place in a few places:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Our &lt;a href=&#34;https://www.ietf.org/mailman/listinfo/spad&#34;&gt;mailing list&lt;/a&gt; is used for most communication, including issue discussion.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;We discuss specific issues on the appropriate issues list in &lt;a href=&#34;https://github.com/fluffy/spad/issues&#34;&gt;Github&lt;/a&gt;. If you don&#39;t want to use Github to follow these discussions, you can subscribe to the &lt;a href=&#34;https://www.ietf.org/mailman/listinfo/spad-issues&#34;&gt;issue announce list&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;We also discuss specific issues on the appropriate issues list in &lt;a href=&#34;https://github.com/fluffy/spad/issues&#34;&gt;Github&lt;/a&gt;. If you don&#39;t want to use Github to follow these discussions, you can subscribe to the &lt;a href=&#34;https://www.ietf.org/mailman/listinfo/spad-issues&#34;&gt;issue announce list&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Our &lt;a href=&#34;https://www.ietf.org/mailman/listinfo/spad&#34;&gt;mailing list&lt;/a&gt; is used for confirmation of consensus.&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&#34;resolving-issues&#34; class=&#34;appendix&#34;&gt;Resolving Issues&lt;/h2&gt;
@@ -816,7 +816,7 @@ chain has the goal of being simple and obvious with no black magic.&lt;/p&gt;
 
 &lt;h2 id=&#34;published-versions&#34; class=&#34;appendix&#34;&gt;Published Versions&lt;/h2&gt;
 
-&lt;p&gt;The web site at (&lt;a href=&#34;https://fluffy.github.io/spad/&#34;&gt;https://fluffy.github.io/spad/&lt;/a&gt;) provides an overview of the specification that is focused on a developer audience. However, all
+&lt;p&gt;The web site at (&lt;a href=&#34;https://coopdanger.github.io/spad/&#34;&gt;https://coopdanger.github.io/spad/&lt;/a&gt;) provides an overview of the specification that is focused on a developer audience. However, all
 the key information to implement the specification that is used to
 generate the web site is also used to generate and internet draft that
 can be found at &lt;a href=&#34;https://datatracker.ietf.org/doc/draft-jennings-dispatch-spad-v0-00/&#34;&gt;draft-jennings-dispatch-spad-v0&lt;/a&gt;.&lt;/p&gt;
