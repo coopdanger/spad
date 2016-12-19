@@ -17,8 +17,8 @@ author: TODO7
 params:
   themeColor: "theme-base-0d"
   description: TODO4
-  sidebarDescription: TODO 5 MORE MORE 
-  sidebarFreeText: 
+  sidebarDescription: TODO 5 MORE MORE
+  sidebarFreeText:
   provider: GitHub
   copyright: TODO6
   repo_url: https://github.com/coopdanger/spad
@@ -33,15 +33,15 @@ params:
 
 indexes:
   tag: tags
-  
+
 menu:
   main:
       - Name: Overview
         Weight: 10x2
         URL: /overview/
-      - Name: Getting Started
+      - Name: Examples
         Weight: 20
-        URL: /getting_started/
+        URL: /examples/
       - Name: API
         Weight: 30
         URL: /api/
@@ -67,4 +67,3 @@ menu:
 
 social:
         github: fluffy/spad
-
