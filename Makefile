@@ -58,7 +58,7 @@ gen/content/about.mmark:  spec/about.md
 	( echo "---" ; echo "title: About SPAD" ; echo "---" ) >  $@
 	cat $< >>  $@
 
-gen/content/examples.mmark:  spec/gettingStarted.md
+gen/content/examples.mmark:  spec/examples.md
 	( echo "---" ; echo "title: Getting Started" ; echo "---" ) >  $@
 	cat $< >>  $@
 
