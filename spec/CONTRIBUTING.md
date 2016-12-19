@@ -18,9 +18,9 @@ chain has the goal of being simple and obvious with no black magic.
 
 We welcome all contributions. Discussion takes place in a few places:
 
-* Our [mailing list](https://www.ietf.org/mailman/listinfo/spad) is used for most communication, including issue discussion.
+* We discuss specific issues on the appropriate issues list in [Github](https://github.com/fluffy/spad/issues). If you don't want to use Github to follow these discussions, you can subscribe to the [issue announce list](https://www.ietf.org/mailman/listinfo/spad-issues).
 
-* We also discuss specific issues on the appropriate issues list in [Github](https://github.com/fluffy/spad/issues). If you don't want to use Github to follow these discussions, you can subscribe to the [issue announce list](https://www.ietf.org/mailman/listinfo/spad-issues).
+* Our [mailing list](https://www.ietf.org/mailman/listinfo/spad) is used for confirmation of consensus.
 
 ## Resolving Issues
 
@@ -36,7 +36,7 @@ Please do not use a pull request to open a new design issue; it may not be notic
 
 ## Published Versions
 
-The web site at (https://fluffy.github.io/spad/) provides an overview of the specification that is focused on a developer audience. However, all
+The web site at (https://coopdanger.github.io/spad/) provides an overview of the specification that is focused on a developer audience. However, all
 the key information to implement the specification that is used to
 generate the web site is also used to generate and internet draft that
 can be found at [draft-jennings-dispatch-spad-v0]
