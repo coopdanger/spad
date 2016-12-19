@@ -222,12 +222,12 @@
 the first step is to form the query URL by constructing an endpoint at
 &quot;.well-known/spad/v0/spad&quot;.</p>
 
-<p>Then an HTTPS GET query is done that to that URL.</p>
+<p>Then an HTTPS GET query is sent to that URL.</p>
 
 <pre><code>curl https://example.com/.well-known/spad/v0/spad
 </code></pre>
 
-<p>The responses would be a JSON result that could looks like</p>
+<p>The response would be a JSON result that could look like</p>
 
 <pre><code>{
   &quot;domain&quot;: &quot;example.com&quot;,
@@ -249,18 +249,18 @@ the first step is to form the query URL by constructing an endpoint at
 }
 </code></pre>
 
-<p>The example above  indicates that the &quot;example.com&quot; application has a
-single service with a single flow that uses only the HTTPS to connect to
+<p>The example above indicates that the &quot;example.com&quot; application has a
+single service with a single flow that uses only HTTPS to connect to
 port 443 on the IP address &quot;203.0.113.2&quot;.  This SPAD information is
 not valid after &quot;Fri 11 Nov 2016 22:20:08 UTC&quot; and a new SPAD file
 should be retrieved before that point in time.</p>
 
 <p>The following shows a more complex example result for an application
-that uses two flows. One is TLS to the SIP port of a server with an v4
+that uses two flows. One is TLS to the SIP port of a server with a v4
 and v6 address. The TLS connection will have a name of example.com in
 the SNI.  The other flow is media sent over UDP to port 5004 on a few
 different ip addresses. If devices in the network are capable of
-remarking DSCP, the desired marking is &quot;AF41&quot;.</p>
+re-marking DSCP, the desired marking is &quot;AF41&quot;.</p>
 
 <pre><code>{
   &quot;domain&quot;: &quot;example.com&quot;,
