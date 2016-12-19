@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.18-DEV" />
+  <meta name="generator" content="Hugo 0.18" />
 
   <title>Internet Draft &middot; SPAD Spec Site</title>
 
@@ -21,13 +21,13 @@
   <!--<![endif]-->
 
   <!--[if lte IE 8]>
-  <link rel="stylesheet" href="https://fluffy.github.io/spad/css/side-menu-old-ie.css">
+  <link rel="stylesheet" href="https://coopdanger.github.io/spad/css/side-menu-old-ie.css">
   <![endif]-->
   <!--[if gt IE 8]><!-->
-  <link rel="stylesheet" href="https://fluffy.github.io/spad/css/side-menu.css">
+  <link rel="stylesheet" href="https://coopdanger.github.io/spad/css/side-menu.css">
   <!--<![endif]-->
 
-  <link rel="stylesheet" href="https://fluffy.github.io/spad/css/blackburn.css">
+  <link rel="stylesheet" href="https://coopdanger.github.io/spad/css/blackburn.css">
 
   
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -40,7 +40,7 @@
 
   
 
-  <link rel="shortcut icon" href="https://fluffy.github.io/spad/img/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="https://coopdanger.github.io/spad/img/favicon.ico" type="image/x-icon" />
 
   
   
@@ -59,7 +59,7 @@
 <div id="menu">
 
   
-  <a class="pure-menu-heading brand" href="https://fluffy.github.io/spad/">SPAD</a>
+  <a class="pure-menu-heading brand" href="https://coopdanger.github.io/spad/">SPAD</a>
 
 
   <div class="pure-menu">
@@ -67,49 +67,49 @@
       
       
         <li class="pure-menu-item">
-          <a class="pure-menu-link" href="https://fluffy.github.io/spad/overview/">Overview</a>
+          <a class="pure-menu-link" href="https://coopdanger.github.io/spad/overview/">Overview</a>
       
         </li>
       
       
         <li class="pure-menu-item">
-          <a class="pure-menu-link" href="https://fluffy.github.io/spad/getting_started/">Getting Started</a>
+          <a class="pure-menu-link" href="https://coopdanger.github.io/spad/getting_started/">Getting Started</a>
       
         </li>
       
       
         <li class="pure-menu-item">
-          <a class="pure-menu-link" href="https://fluffy.github.io/spad/api/">API</a>
+          <a class="pure-menu-link" href="https://coopdanger.github.io/spad/api/">API</a>
       
         </li>
       
       
         <li class="pure-menu-item">
-          <a class="pure-menu-link" href="https://fluffy.github.io/spad/blueprint/">Blueprint</a>
+          <a class="pure-menu-link" href="https://coopdanger.github.io/spad/blueprint/">Blueprint</a>
       
         </li>
       
       
         <li class="pure-menu-item">
-          <a class="pure-menu-link" href="https://fluffy.github.io/spad/schemas/">Schemas</a>
+          <a class="pure-menu-link" href="https://coopdanger.github.io/spad/schemas/">Schemas</a>
       
         </li>
       
       
         <li class="pure-menu-item">
-          <a class="pure-menu-link" href="https://fluffy.github.io/spad/draft-jennings-dispatch-spad-v0-latest/">Draft Standard</a>
+          <a class="pure-menu-link" href="https://coopdanger.github.io/spad/draft-jennings-dispatch-spad-v0-latest/">Draft Standard</a>
       
         </li>
       
       
         <li class="pure-menu-item">
-          <a class="pure-menu-link" href="https://fluffy.github.io/spad/contributing/">Contributing</a>
+          <a class="pure-menu-link" href="https://coopdanger.github.io/spad/contributing/">Contributing</a>
       
         </li>
       
       
         <li class="pure-menu-item">
-          <a class="pure-menu-link" href="https://fluffy.github.io/spad/about/">About</a>
+          <a class="pure-menu-link" href="https://coopdanger.github.io/spad/about/">About</a>
       
         </li>
       
@@ -220,19 +220,19 @@
 <div class="content">
   <h1 class="abstract" id="abstract">Abstract</h1>
 
-<p>This specification defines a simple JSON format and well known URL for
-firewalls and other devices to discover whats IP addresses, ports, and
-related transports a given cloud services uses.</p>
+<p>This specification defines a simple JSON format and well-known URL for
+firewalls and other devices to discover what IP addresses, ports, and
+related transports a given cloud service uses.</p>
 
 <h1 id="introduction">Introduction</h1>
 
-<p>Simple Port and Address Discovery (SPAD) allows an web application to
+<p>Simple Port and Address Discovery (SPAD) allows a web application to
 inform others of what ports and IP addresses it uses so that things
-like firewalls can correctly re-configure themsleves as the ports and
+like firewalls can correctly re-configure themselves as the ports and
 addresses change. Applications are identified by a domain name which
-is used to form a URL in a well known location where a client can do a
-HTTP REST call to get a JSON file that describes information about
-what addresses and transport the service uses.</p>
+is used to form a URL in a well-known location where a client can do an
+HTTPS REST call to get a JSON file that describes information about
+what addresses and transports the service uses.</p>
 
 <h1 id="terminology">Terminology</h1>
 
@@ -246,18 +246,18 @@ implementations.</p>
 <p>JSON Schema is defined at <a href="http://json-schema.org/">http://json-schema.org/</a>. Further
 information is available in <a class="cite" href="#i-d.wright-json-schema"></a>.</p>
 
-<h1 id="example">Example</h1>
+<h1 id="examples">Examples</h1>
 
 <p>To figure out what IP addresses are used by the service example.com,
 the first step is to form the query URL by constructing an endpoint at
 &quot;.well-known/spad/v0/spad&quot;.</p>
 
-<p>Then an HTTPS GET query is done that to that URL.</p>
+<p>Then an HTTPS GET query is sent to that URL.</p>
 
 <pre><code>curl https://example.com/.well-known/spad/v0/spad
 </code></pre>
 
-<p>The responses would be a JSON result that could looks like</p>
+<p>The response would be a JSON result that could look like</p>
 
 <pre><code>{
   &quot;domain&quot;: &quot;example.com&quot;,
@@ -279,18 +279,18 @@ the first step is to form the query URL by constructing an endpoint at
 }
 </code></pre>
 
-<p>The example above  indicates that the &quot;example.com&quot; application has a
-single service with a single flow that uses only the HTTPS to connect to
+<p>The example above indicates that the &quot;example.com&quot; application has a
+single service with a single flow that uses only HTTPS to connect to
 port 443 on the IP address &quot;203.0.113.2&quot;.  This SPAD information is
 not valid after &quot;Fri 11 Nov 2016 22:20:08 UTC&quot; and a new SPAD file
 should be retrieved before that point in time.</p>
 
 <p>The following shows a more complex example result for an application
-that uses two flows. One is TLS to the SIP port of a server with an v4
+that uses two flows. One is TLS to the SIP port of a server with a v4
 and v6 address. The TLS connection will have a name of example.com in
 the SNI.  The other flow is media sent over UDP to port 5004 on a few
 different ip addresses. If devices in the network are capable of
-remarking DSCP, the desired marking is &quot;AF41&quot;.</p>
+re-marking DSCP, the desired marking is &quot;AF41&quot;.</p>
 
 <pre><code>{
   &quot;domain&quot;: &quot;example.com&quot;,
@@ -323,52 +323,41 @@ remarking DSCP, the desired marking is &quot;AF41&quot;.</p>
 }
 </code></pre>
 
-<h1 id="blueprint">Blueprint</h1>
+<h1 id="raml">RAML</h1>
 
-<p>The Bluprint specification for the API is:</p>
+<p>The RAML specification for the API is:</p>
 
-<pre><code class="language-md">FORMAT: 1A
+<pre><code class="language-yaml">#%RAML 0.8
+title: SPAD
+version: v0
+protocols: [ HTTPS ]
+baseUri: https://example.com/.well-known/spad/{version}
+mediaType: application/json
 
-# SPAD
+schemas:
+ - spad.json: !include spad-schema.json
 
-# Group Flows
+documentation:
+ - title: Overview
+   content: !include overview.md
 
-## Service Collection [/.well-known/spad/v0/spad]
-### Get SPAD information for this application [GET]
-+ Response 200 (application/json)
-  + Attributes ( Application )
-
-## Service Collection [/.well-known/spad/v0/{service}]
-### Get SPAD information for this service [GET]
-+ Parameters
-    + service (string) -- service name to lookup
-+ Response 200 (application/json)
-  + Attributes ( Service )
-  
-
-# Data Structures
-
-## Application
-+ domain: example.com (string)
-+ services (array[Service])
-
-## Service (object)
-+ name: message (string) 
-+ validTill: Fri 11 Nov 2016 22:20:08 UTC (string)
-+ flows (array[Flow])
-
-## Flow (object)
-+ ips: 203.0.113.2, 2001:db8::1 (array[string], required) - All IP addresses used by this flow
-+ port: 443 (number, required) - destination port number 
-+ name: example.com (string, optional) - names used in TLS SNI or Proxy connect  
-+ protocol: udp, tcp, http, tls, https, quic (enum, optional)
-+ qos: CS1, DF, EF, AF11, AF21, AF41, AF42, AF43, AF31, AF32, AF33 (enum, optional)
-
+/transports:
+  description: Transports used by this service
+  get:
+    description: Retrieve the spad
+    responses:
+       200:
+         description: Return SPAD file -
+         see https://fluffy.github.io/spad/schemas/ 
+         body:
+          application/json:
+            schema: spad.json
+            example: !include example1.json
 </code></pre>
 
 <h1 id="schemas">Schemas</h1>
 
-<p>The JSON returned from MUST corespond to the following JSON schema.</p>
+<p>The JSON returned in a response MUST correspond to the following JSON schema:</p>
 
 <pre><code>{
   &quot;$schema&quot;: &quot;http://json-schema.org/draft-04/schema#&quot;,
@@ -383,26 +372,27 @@ remarking DSCP, the desired marking is &quot;AF41&quot;.</p>
 
       &quot;services&quot;: {
           &quot;type&quot;: &quot;array&quot;,
-          
+
           &quot;items&quot;: {
               &quot;type&quot;: &quot;object&quot;,
               &quot;properties&quot;: {
-                  
+
                   &quot;name&quot;: {
                       &quot;type&quot;: &quot;string&quot;,
                       &quot;title&quot;: &quot;name of service&quot;
                   },
-                  
+
                   &quot;validTill&quot;: {
                       &quot;type&quot;: &quot;string&quot;,
                       &quot;title&quot;: &quot;Expiry time for this SPAD file&quot;
                   },
-                  
+
                   &quot;flows&quot;: {
                       &quot;type&quot;: &quot;array&quot;,
                       &quot;uniqueItems&quot;: false,
                       &quot;title&quot;: &quot;Transport List&quot;,
-                      &quot;description&quot;: &quot;List of transports used by the application.&quot;,
+                      &quot;description&quot;: &quot;List of transports used by the
+                      application.&quot;,
                       &quot;items&quot;: {
                           &quot;type&quot;: &quot;object&quot;,
                           &quot;title&quot;: &quot;Flow&quot;,
@@ -417,24 +407,27 @@ remarking DSCP, the desired marking is &quot;AF41&quot;.</p>
                                   }
                               },
                               &quot;port&quot;: {
-                                  
+
                                   &quot;type&quot;: &quot;integer&quot;,
                                   &quot;maximum&quot;: 65535,
                                   &quot;minimum&quot;: 1,
                                   &quot;title&quot;: &quot;port&quot;,
-                                  &quot;description&quot;: &quot;Destination ports used by the transport protocol.&quot;
-                                  
+                                  &quot;description&quot;: &quot;Destination ports
+                                  used by the transport protocol.&quot;
+
                               },
                               &quot;name&quot;: {
                                   &quot;type&quot;: &quot;string&quot;,
                                   &quot;title&quot;: &quot;DNS name&quot;,
-                                  &quot;description&quot;: &quot;DNS name that will be used to connect to.&quot;
-                                  
+                                  &quot;description&quot;: &quot;DNS name that will
+                                  be used to connect to.&quot;
+
                               },
                               &quot;qos&quot;:  {
                                   &quot;type&quot;: &quot;string&quot;,
                                   &quot;title&quot;: &quot;DSCP&quot;,
-                                  &quot;description&quot;: &quot;Differentiated Services Code Point to use.&quot;,
+                                  &quot;description&quot;: &quot;Differentiated
+                                  Services Code Point to use.&quot;,
                                   &quot;enum&quot;: [
                                       &quot;CS1&quot;,
                                       &quot;DF&quot;,
@@ -477,7 +470,7 @@ remarking DSCP, the desired marking is &quot;AF41&quot;.</p>
 }
 </code></pre>
 
-<h1 id="iana-consideration">IANA Consideration</h1>
+<h1 id="iana-considerations">IANA Considerations</h1>
 
 <p>TODO - register well known URL usage</p>
 
@@ -489,55 +482,84 @@ remarking DSCP, the desired marking is &quot;AF41&quot;.</p>
 
 <h1 id="acknowledgements">Acknowledgements</h1>
 
-<p>Thank you for the contributions from:
-Cullen Jennings</p>
+<p>TODO - add acknowledgments</p>
 
-<h1 id="contributing" class="appendix">Contributing</h1>
+<h1 id="development-of-this-specification" class="appendix">Development of this Specification</h1>
 
-<p>We welcome all contributions. Discussion happens in the
-<a href="https://spadwg.slack.com/messages/general/">https://spadwg.slack.com/messages/general/</a> room in slack and on GitHub
-issue threads at (<a href="https://github.com/fluffy/spad/issues">https://github.com/fluffy/spad/issues</a>). Changes are
-done via git pull requests. For PsR merged into the master branch, we
-strive for rough consensus and we measure that by the reviews placed
-on the PR.</p>
+<h2 id="specification-style" class="appendix">Specification Style</h2>
 
-<p>The Specification style is &quot;less is more&quot;. If a reasonable developer
+<p>The specification style is &quot;less is more.&quot; If a reasonable developer
 who is fully up on modern web development practices could figure out
 how write an interoperable implementation after looking at some
 examples and code and asking a few questions, well that's good enough
 for us. If you can find it on Wikipedia, we don't need to explain it
 here.</p>
 
-<p>Markdown is used for text. RAML and JSON Schema are used to describe
-the API. Examples are often used as normative specification. The build
-chain has the goal is to be simple and obvios with no black magic.</p>
+<p>The build chain allows for an internet draft to be produced from separate parts: a basic draft skeleton that includes narrative text; examples; an API specification; and a schema. Markdown is used for text. RAML and JSON Schema are used to describe
+the API. Examples play a central role in the specification. The build
+chain has the goal of being simple and obvious with no black magic.</p>
 
-<h1 id="published-versions" class="appendix">Published Versions</h1>
+<h2 id="following-discussion" class="appendix">Following Discussion</h2>
 
-<p>The website at (<a href="https://fluffy.github.io/spad/">https://fluffy.github.io/spad/</a>) provides an overview
-view of the specification that is focused on developers. However all
+<p>We welcome all contributions. Discussion takes place in a few places:</p>
+
+<ul>
+<li><p>Our <a href="https://www.ietf.org/mailman/listinfo/spad">mailing list</a> is used for most communication, including issue discussion.</p></li>
+
+<li><p>We also discuss specific issues on the appropriate issues list in <a href="https://github.com/fluffy/spad/issues">Github</a>. If you don't want to use Github to follow these discussions, you can subscribe to the <a href="https://www.ietf.org/mailman/listinfo/spad-issues">issue announce list</a>.</p></li>
+</ul>
+
+<h2 id="resolving-issues" class="appendix">Resolving Issues</h2>
+
+<p>Consensus for the resolution of an issue can be established in a few different ways:</p>
+
+<ul>
+<li><p>Through discussion on the mailing list. Once a resolution is found, it will be recorded in the issue.</p></li>
+
+<li><p>Through discussion on the issues list. Once a resolution is found, it will be confirmed on the mailing list before consensus is declared.</p></li>
+</ul>
+
+<p>&lt;<Add step here where editor writes a PR and there is strong indication of WG consensus at time of merge. And maybe delete bullet 1.>&gt;</p>
+
+<p>Issues that have consensus will be labelled as <code>editor-ready</code>. After the editor has incorporated a resolution into the specification, the issue can be closed.</p>
+
+<h2 id="pull-requests" class="appendix">Pull Requests</h2>
+
+<p>We welcome pull requests, both for editorial suggestions and to resolve open issues. In the latter case, please identify the relevant issue.</p>
+
+<p>Please do not use a pull request to open a new design issue; it may not be noticed.</p>
+
+<!--
+Discussion happens in the
+https://spadwg.slack.com/messages/general/ room in slack and on GitHub
+issue threads at (https://github.com/fluffy/spad/issues). Changes are
+done via git pull requests. For PsR merged into the master branch, we
+strive for rough consensus and we measure that by the reviews placed
+on the PR.-->
+
+<h2 id="published-versions" class="appendix">Published Versions</h2>
+
+<p>The web site at (<a href="https://fluffy.github.io/spad/">https://fluffy.github.io/spad/</a>) provides an overview of the specification that is focused on a developer audience. However, all
 the key information to implement the specification that is used to
-generate the website is also used to generate and internet draft that
-can be found at <a href="https://datatracker.ietf.org/doc/draft-jennings-dispatch-spad-v0-00/">draft-jennings-dispatch-spad-v0</a>
-that is slanted at specification developers. Periodically the
-information on the master is branched to versioned draft branch and
-published and an internet draft. A typical cadence for this is monthly
-so that it can receiver broader review. If the PRs that were merged to
-master represent WG rough consensus, it is expected that it the will
-move quickly through the standards process. When the work is at a good
-point to form a version of the API, it is progressed to an RFC and the
-text of the approved RFC is used to form a released version of the
-spec. The first version would be v1. The current working pre standard
-version is always referred to as v0.  The API includes the version in
-the URL so that developers can implement to a specific non changing
+generate the web site is also used to generate and internet draft that
+can be found at <a href="https://datatracker.ietf.org/doc/draft-jennings-dispatch-spad-v0-00/">draft-jennings-dispatch-spad-v0</a>.</p>
+
+<p>Periodically the information on the master is branched to a versioned draft branch and the content of that branch is used to produce an updated version of the internet draft. A typical cadence for this is monthly
+so that the draft can receive broader review.</p>
+
+<p>When the work is at a good
+point to form a stable version of the API, it is progressed through the IETF publication process with the goal of publishing an RFC. Once approved, the
+text of the RFC is used to form a released version of the API. The first version would be v1. The current working pre-standard
+version is always referred to as v0 &lt;<current living standard version is always v0>&gt;.  The API includes the version in
+the URL so that developers can implement to a specific non-changing
 specification. Future versions attempt, but do not guarantee, to be
-backwards comptable with the previos version.</p>
+backwards-compatible with the previous version.</p>
 
 </div>
 
 </div>
 </div>
-<script src="https://fluffy.github.io/spad/js/ui.js"></script>
+<script src="https://coopdanger.github.io/spad/js/ui.js"></script>
 
 
 
