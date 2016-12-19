@@ -24,15 +24,8 @@ We welcome all contributions. Discussion takes place in a few places:
 
 ## Resolving Issues
 
-Consensus for the resolution of an issue can be established in a few different ways:
+Consensus for the resolution of an issue can be established through discussion on the issues list. Once a resolution is found, the issue will be labeled as `editor-ready`. The editor will then write a pull request suggesting the specific changes to make to resolve the issue. Consensus to adopt the change will be judged on the mailing list. Once a pull request has consensus, the editor will merge it and close the issue.
 
-* Through discussion on the mailing list. Once a resolution is found, it will be recorded in the issue.
-
-* Through discussion on the issues list. Once a resolution is found, it will be confirmed on the mailing list before consensus is declared.
-
-<<Add step here where editor writes a PR and there is strong indication of WG consensus at time of merge. And maybe delete bullet 1.>>
-
-Issues that have consensus will be labelled as `editor-ready`. After the editor has incorporated a resolution into the specification, the issue can be closed.
 
 ## Pull Requests
 
@@ -40,13 +33,6 @@ We welcome pull requests, both for editorial suggestions and to resolve open iss
 
 Please do not use a pull request to open a new design issue; it may not be noticed.
 
-<!--
-Discussion happens in the
-https://spadwg.slack.com/messages/general/ room in slack and on GitHub
-issue threads at (https://github.com/fluffy/spad/issues). Changes are
-done via git pull requests. For PsR merged into the master branch, we
-strive for rough consensus and we measure that by the reviews placed
-on the PR.-->
 
 ## Published Versions
 
@@ -62,7 +48,7 @@ so that the draft can receive broader review.
 When the work is at a good
 point to form a stable version of the API, it is progressed through the IETF publication process with the goal of publishing an RFC. Once approved, the
 text of the RFC is used to form a released version of the API. The first version would be v1. The current working pre-standard
-version is always referred to as v0 <<current living standard version is always v0>>.  The API includes the version in
+version is always referred to as v0.  The API includes the version in
 the URL so that developers can implement to a specific non-changing
 specification. Future versions attempt, but do not guarantee, to be
 backwards-compatible with the previous version.
