@@ -31,7 +31,8 @@ server:
 	hugo  --config hugo-config.yaml --contentDir gen/content --destination docs server
 
 
-site: themes/blackburn/README.md gen/content/about.mmark gen/content/getting_started.mmark gen/content/overview.mmark \
+#site: themes/blackburn/README.md gen/content/about.mmark gen/content/getting_started.mmark gen/content/overview.mmark \
+site: themes/blackburn/README.md gen/content/about.mmark gen/content/examples.mmark gen/content/overview.mmark \
 	gen/content/contributing.mmark gen/content/raml.mmark gen/content/schemas.mmark\
 	gen/content/api.html  gen/content/blueprint.mmark \
 	gen/content/$(DRAFT)-$(VERSION).mmark gen/Contributors.md \
@@ -54,8 +55,10 @@ gen/content/about.mmark:  spec/about.md
 	( echo "---" ; echo "title: About SPAD" ; echo "---" ) >  $@
 	cat $< >>  $@
 
-gen/content/getting_started.mmark:  spec/gettingStarted.md
-	( echo "---" ; echo "title: Getting Started" ; echo "---" ) >  $@
+#gen/content/getting_started.mmark:  spec/gettingStarted.md
+#	( echo "---" ; echo "title: Getting Started" ; echo "---" ) >  $@
+gen/content/examples.mmark:  spec/examples.md
+	( echo "---" ; echo "title: Examples" ; echo "---" ) >  $@
 	cat $< >>  $@
 
 gen/content/overview.mmark:  spec/overview.md
