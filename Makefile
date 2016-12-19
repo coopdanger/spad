@@ -31,13 +31,13 @@ server:
 	hugo  --config hugo-config.yaml --contentDir gen/content --destination docs server
 
 
-#site: themes/blackburn/README.md gen/content/about.mmark gen/content/getting_started.mmark gen/content/overview.mmark \
+site: themes/blackburn/README.md gen/content/about.mmark gen/content/getting_started.mmark gen/content/overview.mmark \
 	gen/content/contributing.mmark gen/content/raml.mmark gen/content/schemas.mmark\
 	gen/content/api.html  gen/content/blueprint.mmark \
 	gen/content/$(DRAFT)-$(VERSION).mmark gen/Contributors.md \
 	hugo-config.yaml gen/spad.apib.md
 
-site: themes/blackburn/README.md gen/content/about.mmark gen/content/examples.mmark gen/content/overview.mmark \
+#site: themes/blackburn/README.md gen/content/about.mmark gen/content/examples.mmark gen/content/overview.mmark \
 	gen/content/contributing.mmark gen/content/raml.mmark gen/content/schemas.mmark\
 	gen/content/api.html  gen/content/blueprint.mmark \
 	gen/content/$(DRAFT)-$(VERSION).mmark gen/Contributors.md \
