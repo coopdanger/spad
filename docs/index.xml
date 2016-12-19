@@ -444,10 +444,10 @@ backwards-compatible with the previous version.&lt;/p&gt;
     
     <item>
       <title>Getting Started</title>
-      <link>https://coopdanger.github.io/spad/getting_started/</link>
+      <link>https://coopdanger.github.io/spad/examples/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://coopdanger.github.io/spad/getting_started/</guid>
+      <guid>https://coopdanger.github.io/spad/examples/</guid>
       <description>&lt;p&gt;To figure out what IP addresses are used by the service example.com,
 the first step is to form the query URL by constructing an endpoint at
 &amp;quot;.well-known/spad/v0/spad&amp;quot;.&lt;/p&gt;
