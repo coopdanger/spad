@@ -396,31 +396,13 @@ chain has the goal of being simple and obvious with no black magic.&lt;/p&gt;
 
 &lt;h2 id=&#34;resolving-issues&#34;&gt;Resolving Issues&lt;/h2&gt;
 
-&lt;p&gt;Consensus for the resolution of an issue can be established in a few different ways:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Through discussion on the mailing list. Once a resolution is found, it will be recorded in the issue.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Through discussion on the issues list. Once a resolution is found, it will be confirmed on the mailing list before consensus is declared.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&amp;lt;&lt;Add step here where editor writes a PR and there is strong indication of WG consensus at time of merge. And maybe delete bullet 1.&gt;&amp;gt;&lt;/p&gt;
-
-&lt;p&gt;Issues that have consensus will be labelled as &lt;code&gt;editor-ready&lt;/code&gt;. After the editor has incorporated a resolution into the specification, the issue can be closed.&lt;/p&gt;
+&lt;p&gt;Consensus for the resolution of an issue can be established through discussion on the issues list. Once a resolution is found, the issue will be labeled as &lt;code&gt;editor-ready&lt;/code&gt;. The editor will then write a pull request suggesting the specific changes to make to resolve the issue. Consensus to adopt the change will be judged on the mailing list. Once a pull request has consensus, the editor will merge it and close the issue.&lt;/p&gt;
 
 &lt;h2 id=&#34;pull-requests&#34;&gt;Pull Requests&lt;/h2&gt;
 
 &lt;p&gt;We welcome pull requests, both for editorial suggestions and to resolve open issues. In the latter case, please identify the relevant issue.&lt;/p&gt;
 
 &lt;p&gt;Please do not use a pull request to open a new design issue; it may not be noticed.&lt;/p&gt;
-
-&lt;!--
-Discussion happens in the
-https://spadwg.slack.com/messages/general/ room in slack and on GitHub
-issue threads at (https://github.com/fluffy/spad/issues). Changes are
-done via git pull requests. For PsR merged into the master branch, we
-strive for rough consensus and we measure that by the reviews placed
-on the PR.--&gt;
 
 &lt;h2 id=&#34;published-versions&#34;&gt;Published Versions&lt;/h2&gt;
 
@@ -435,7 +417,7 @@ so that the draft can receive broader review.&lt;/p&gt;
 &lt;p&gt;When the work is at a good
 point to form a stable version of the API, it is progressed through the IETF publication process with the goal of publishing an RFC. Once approved, the
 text of the RFC is used to form a released version of the API. The first version would be v1. The current working pre-standard
-version is always referred to as v0 &amp;lt;&lt;current living standard version is always v0&gt;&amp;gt;.  The API includes the version in
+version is always referred to as v0.  The API includes the version in
 the URL so that developers can implement to a specific non-changing
 specification. Future versions attempt, but do not guarantee, to be
 backwards-compatible with the previous version.&lt;/p&gt;
@@ -824,31 +806,13 @@ chain has the goal of being simple and obvious with no black magic.&lt;/p&gt;
 
 &lt;h2 id=&#34;resolving-issues&#34; class=&#34;appendix&#34;&gt;Resolving Issues&lt;/h2&gt;
 
-&lt;p&gt;Consensus for the resolution of an issue can be established in a few different ways:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Through discussion on the mailing list. Once a resolution is found, it will be recorded in the issue.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Through discussion on the issues list. Once a resolution is found, it will be confirmed on the mailing list before consensus is declared.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&amp;lt;&lt;Add step here where editor writes a PR and there is strong indication of WG consensus at time of merge. And maybe delete bullet 1.&gt;&amp;gt;&lt;/p&gt;
-
-&lt;p&gt;Issues that have consensus will be labelled as &lt;code&gt;editor-ready&lt;/code&gt;. After the editor has incorporated a resolution into the specification, the issue can be closed.&lt;/p&gt;
+&lt;p&gt;Consensus for the resolution of an issue can be established through discussion on the issues list. Once a resolution is found, the issue will be labeled as &lt;code&gt;editor-ready&lt;/code&gt;. The editor will then write a pull request suggesting the specific changes to make to resolve the issue. Consensus to adopt the change will be judged on the mailing list. Once a pull request has consensus, the editor will merge it and close the issue.&lt;/p&gt;
 
 &lt;h2 id=&#34;pull-requests&#34; class=&#34;appendix&#34;&gt;Pull Requests&lt;/h2&gt;
 
 &lt;p&gt;We welcome pull requests, both for editorial suggestions and to resolve open issues. In the latter case, please identify the relevant issue.&lt;/p&gt;
 
 &lt;p&gt;Please do not use a pull request to open a new design issue; it may not be noticed.&lt;/p&gt;
-
-&lt;!--
-Discussion happens in the
-https://spadwg.slack.com/messages/general/ room in slack and on GitHub
-issue threads at (https://github.com/fluffy/spad/issues). Changes are
-done via git pull requests. For PsR merged into the master branch, we
-strive for rough consensus and we measure that by the reviews placed
-on the PR.--&gt;
 
 &lt;h2 id=&#34;published-versions&#34; class=&#34;appendix&#34;&gt;Published Versions&lt;/h2&gt;
 
@@ -863,7 +827,7 @@ so that the draft can receive broader review.&lt;/p&gt;
 &lt;p&gt;When the work is at a good
 point to form a stable version of the API, it is progressed through the IETF publication process with the goal of publishing an RFC. Once approved, the
 text of the RFC is used to form a released version of the API. The first version would be v1. The current working pre-standard
-version is always referred to as v0 &amp;lt;&lt;current living standard version is always v0&gt;&amp;gt;.  The API includes the version in
+version is always referred to as v0.  The API includes the version in
 the URL so that developers can implement to a specific non-changing
 specification. Future versions attempt, but do not guarantee, to be
 backwards-compatible with the previous version.&lt;/p&gt;
