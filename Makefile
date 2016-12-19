@@ -59,7 +59,7 @@ gen/content/about.mmark:  spec/about.md
 	cat $< >>  $@
 
 gen/content/examples.mmark:  spec/examples.md
-	( echo "---" ; echo "title: Getting Started" ; echo "---" ) >  $@
+	( echo "---" ; echo "title: Examples" ; echo "---" ) >  $@
 	cat $< >>  $@
 
 gen/content/overview.mmark:  spec/overview.md
