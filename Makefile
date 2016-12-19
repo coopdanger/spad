@@ -16,7 +16,7 @@ endif
 .PRECIOUS: %.xml
 
 
-all:  dirs draft site 
+all:  dirs draft site
 
 dirs:
 	mkdir -p gen/content
@@ -25,19 +25,24 @@ dirs:
 
 
 
-draft: docs/id/$(DRAFT)-$(VERSION).txt docs/id/$(DRAFT)-$(VERSION).html 
+draft: docs/id/$(DRAFT)-$(VERSION).txt docs/id/$(DRAFT)-$(VERSION).html
 
 server:
 	hugo  --config hugo-config.yaml --contentDir gen/content --destination docs server
 
 
 #site: themes/blackburn/README.md gen/content/about.mmark gen/content/getting_started.mmark gen/content/overview.mmark \
+	gen/content/contributing.mmark gen/content/raml.mmark gen/content/schemas.mmark\
+	gen/content/api.html  gen/content/blueprint.mmark \
+	gen/content/$(DRAFT)-$(VERSION).mmark gen/Contributors.md \
+	hugo-config.yaml gen/spad.apib.md
+
 site: themes/blackburn/README.md gen/content/about.mmark gen/content/examples.mmark gen/content/overview.mmark \
 	gen/content/contributing.mmark gen/content/raml.mmark gen/content/schemas.mmark\
 	gen/content/api.html  gen/content/blueprint.mmark \
 	gen/content/$(DRAFT)-$(VERSION).mmark gen/Contributors.md \
 	hugo-config.yaml gen/spad.apib.md
-	hugo  --config hugo-config.yaml --contentDir gen/content --destination docs 
+	hugo  --config hugo-config.yaml --contentDir gen/content --destination docs
 
 gen/content/contributing.mmark: spec/CONTRIBUTING.md
 	( echo "---" ; echo "title: Contributing " ; echo "---" ) >  $@
@@ -77,7 +82,7 @@ gen/content/schemas.mmark:  spec/schemas.md
 	( echo "---" ; echo "title: JSON Schema for Results" ; echo "---" ) >  $@
 	cat $< >>  $@
 
-gen/content/draft.mmark:  
+gen/content/draft.mmark:
 	( echo "---" ; echo "title: Internet Draft" ; echo "---" ) >  $@
 	cat $< >>  $@
 
@@ -100,10 +105,10 @@ tidy:
 	json -I --output json -f spec/example2.json
 	ramllint spec/spad.raml
 
-%.txt: %.xml 
+%.txt: %.xml
 	$(xml2rfc) -N $< -o $@ --text
 
-%.html: %.xml 
+%.html: %.xml
 	$(xml2rfc) -N $< -o $@ --html
 
 docs/id/$(DRAFT)-$(VERSION).xml: spec/$(DRAFT).md  spec/*.md gen/example1.json.md gen/example2.json.md gen/spad.raml.md gen/spad-schema.json.md gen/Contributors.md
@@ -125,19 +130,18 @@ gen/content/api.html: spec/spad.apib
 
 
 gen/%.raml.md: spec/%.raml
-	mkdir -p gen 
+	mkdir -p gen
 	( echo "~~~ yaml" ; cat $< ; echo "~~~" ) > $@
 
 gen/%.apib.md: spec/%.apib
-	mkdir -p gen 
+	mkdir -p gen
 	( echo "~~~ md" ; cat $< ; echo "~~~" ) > $@
 
 gen/%.json.md: spec/%.json
-	mkdir -p gen 
+	mkdir -p gen
 	( echo "~~~ " ; cat $< ; echo "~~~" ) > $@
 
 
 themes/blackburn/README.md:
 	mkdir -p themes/
 	(cd themes/ ; git clone https://github.com/yoshiharuyamashita/blackburn.git )
-
