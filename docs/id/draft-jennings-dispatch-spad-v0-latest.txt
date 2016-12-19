@@ -4,8 +4,8 @@
 
 Network Working Group                                        C. Jennings
 Internet-Draft                                                     Cisco
-Intended status: Standards Track                       December 15, 2016
-Expires: June 18, 2017
+Intended status: Standards Track                       December 19, 2016
+Expires: June 22, 2017
 
 
                    Simple Port and Address Discovery
@@ -32,7 +32,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on June 18, 2017.
+   This Internet-Draft will expire on June 22, 2017.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Jennings                  Expires June 18, 2017                 [Page 1]
+Jennings                  Expires June 22, 2017                 [Page 1]
 
 Internet-Draft                    SPAD                     December 2016
 
@@ -109,12 +109,12 @@ Table of Contents
 
 
 
-Jennings                  Expires June 18, 2017                 [Page 2]
+Jennings                  Expires June 22, 2017                 [Page 2]
 
 Internet-Draft                    SPAD                     December 2016
 
 
-   Then an HTTPS GET query is done that to that URL.
+   Then an HTTPS GET query is sent to that URL.
 
              curl https://example.com/.well-known/spad/v0/spad
 
@@ -165,7 +165,7 @@ Internet-Draft                    SPAD                     December 2016
 
 
 
-Jennings                  Expires June 18, 2017                 [Page 3]
+Jennings                  Expires June 22, 2017                 [Page 3]
 
 Internet-Draft                    SPAD                     December 2016
 
@@ -221,7 +221,7 @@ Internet-Draft                    SPAD                     December 2016
 
 
 
-Jennings                  Expires June 18, 2017                 [Page 4]
+Jennings                  Expires June 22, 2017                 [Page 4]
 
 Internet-Draft                    SPAD                     December 2016
 
@@ -277,7 +277,7 @@ Internet-Draft                    SPAD                     December 2016
 
 
 
-Jennings                  Expires June 18, 2017                 [Page 5]
+Jennings                  Expires June 22, 2017                 [Page 5]
 
 Internet-Draft                    SPAD                     December 2016
 
@@ -333,7 +333,7 @@ Internet-Draft                    SPAD                     December 2016
 
 
 
-Jennings                  Expires June 18, 2017                 [Page 6]
+Jennings                  Expires June 22, 2017                 [Page 6]
 
 Internet-Draft                    SPAD                     December 2016
 
@@ -389,7 +389,7 @@ Internet-Draft                    SPAD                     December 2016
 
 
 
-Jennings                  Expires June 18, 2017                 [Page 7]
+Jennings                  Expires June 22, 2017                 [Page 7]
 
 Internet-Draft                    SPAD                     December 2016
 
@@ -445,7 +445,7 @@ A.1.  Specification Style
 
 
 
-Jennings                  Expires June 18, 2017                 [Page 8]
+Jennings                  Expires June 22, 2017                 [Page 8]
 
 Internet-Draft                    SPAD                     December 2016
 
@@ -485,9 +485,7 @@ A.3.  Resolving Issues
       found, it will be confirmed on the mailing list before consensus
       is declared.
 
-   The editors can also propose resolutions for the group's
-   consideration by incorporating them into the draft; when doing so,
-   the issue should not be closed until consensus is declared.
+   <>
 
    Issues that have consensus will be labelled as "editor-ready".  After
    the editor has incorporated a resolution into the specification, the
@@ -501,7 +499,9 @@ A.4.  Pull Requests
 
 
 
-Jennings                  Expires June 18, 2017                 [Page 9]
+
+
+Jennings                  Expires June 22, 2017                 [Page 9]
 
 Internet-Draft                    SPAD                     December 2016
 
@@ -527,8 +527,8 @@ A.5.  Published Versions
    it is progressed through the IETF publication process with the goal
    of publishing an RFC.  Once approved, the text of the RFC is used to
    form a released version of the API.  The first version would be v1.
-   The current working pre-standard version is always referred to as v0.
-   The API includes the version in the URL so that developers can
+   The current working pre-standard version is always referred to as v0
+   <>.  The API includes the version in the URL so that developers can
    implement to a specific non-changing specification.  Future versions
    attempt, but do not guarantee, to be backwards-compatible with the
    previous version.
@@ -557,4 +557,4 @@ Author's Address
 
 
 
-Jennings                  Expires June 18, 2017                [Page 10]
+Jennings                  Expires June 22, 2017                [Page 10]

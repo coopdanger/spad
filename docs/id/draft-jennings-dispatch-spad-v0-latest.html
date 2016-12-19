@@ -399,7 +399,7 @@
 
   <meta name="dct.creator" content="Jennings, C." />
   <meta name="dct.identifier" content="urn:ietf:id:draft-jennings-dispatch-spad-v0-latest" />
-  <meta name="dct.issued" scheme="ISO8601" content="2016-12-15" />
+  <meta name="dct.issued" scheme="ISO8601" content="2016-12-19" />
   <meta name="dct.abstract" content="This specification defines a simple JSON format and well-known URL for firewalls and other devices to discover what IP addresses, ports, and related transports a given cloud service uses.  " />
   <meta name="description" content="This specification defines a simple JSON format and well-known URL for firewalls and other devices to discover what IP addresses, ports, and related transports a given cloud service uses.  " />
 
@@ -420,10 +420,10 @@
 </tr>
 <tr>
   <td class="left">Intended status: Standards Track</td>
-  <td class="right">December 15, 2016</td>
+  <td class="right">December 19, 2016</td>
 </tr>
 <tr>
-  <td class="left">Expires: June 18, 2017</td>
+  <td class="left">Expires: June 22, 2017</td>
   <td class="right"></td>
 </tr>
 
@@ -444,7 +444,7 @@
 <p>This Internet-Draft is submitted in full conformance with the provisions of BCP 78 and BCP 79.</p>
 <p>Internet-Drafts are working documents of the Internet Engineering Task Force (IETF).  Note that other groups may also distribute working documents as Internet-Drafts.  The list of current Internet-Drafts is at http://datatracker.ietf.org/drafts/current/.</p>
 <p>Internet-Drafts are draft documents valid for a maximum of six months and may be updated, replaced, or obsoleted by other documents at any time.  It is inappropriate to use Internet-Drafts as reference material or to cite them other than as "work in progress."</p>
-<p>This Internet-Draft will expire on June 18, 2017.</p>
+<p>This Internet-Draft will expire on June 22, 2017.</p>
 <h1 id="rfc.copyrightnotice">
   <a href="#rfc.copyrightnotice">Copyright Notice</a>
 </h1>
@@ -486,7 +486,7 @@
 <p id="rfc.section.2.p.3">JSON Schema is defined at <span>&lt;</span><a href="http://json-schema.org/">http://json-schema.org/</a><span>&gt;</span>. Further information is available in <a href="#I-D.wright-json-schema">[I-D.wright-json-schema]</a>.  </p>
 <h1 id="rfc.section.3"><a href="#rfc.section.3">3.</a> <a href="#examples" id="examples">Examples</a></h1>
 <p id="rfc.section.3.p.1">To figure out what IP addresses are used by the service example.com, the first step is to form the query URL by constructing an endpoint at ".well-known/spad/v0/spad".  </p>
-<p id="rfc.section.3.p.2">Then an HTTPS GET query is done that to that URL.  </p>
+<p id="rfc.section.3.p.2">Then an HTTPS GET query is sent to that URL.  </p>
 <pre>
 curl https://example.com/.well-known/spad/v0/spad
 </pre>
@@ -741,7 +741,7 @@ documentation:
 </ul>
 
 <p> </p>
-<p id="rfc.section.A.3.p.3">The editors can also propose resolutions for the group's consideration by incorporating them into the draft; when doing so, the issue should not be closed until consensus is declared.  </p>
+<p id="rfc.section.A.3.p.3">&lt;&gt; </p>
 <p id="rfc.section.A.3.p.4">Issues that have consensus will be labelled as <samp>editor-ready</samp>. After the editor has incorporated a resolution into the specification, the issue can be closed.  </p>
 <h1 id="rfc.appendix.A.4"><a href="#rfc.appendix.A.4">A.4.</a> <a href="#pull-requests" id="pull-requests">Pull Requests</a></h1>
 <p id="rfc.section.A.4.p.1">We welcome pull requests, both for editorial suggestions and to resolve open issues. In the latter case, please identify the relevant issue.  </p>
@@ -749,7 +749,7 @@ documentation:
 <h1 id="rfc.appendix.A.5"><a href="#rfc.appendix.A.5">A.5.</a> <a href="#published-versions" id="published-versions">Published Versions</a></h1>
 <p id="rfc.section.A.5.p.1">The web site at (<span>&lt;</span><a href="https://fluffy.github.io/spad/">https://fluffy.github.io/spad/</a><span>&gt;</span>) provides an overview of the specification that is focused on a developer audience. However, all the key information to implement the specification that is used to generate the web site is also used to generate and internet draft that can be found at <a href="https://datatracker.ietf.org/doc/draft-jennings-dispatch-spad-v0-00/">draft-jennings-dispatch-spad-v0</a>.  </p>
 <p id="rfc.section.A.5.p.2">Periodically the information on the master is branched to a versioned draft branch and the content of that branch is used to produce an updated version of the internet draft. A typical cadence for this is monthly so that the draft can receive broader review.  </p>
-<p id="rfc.section.A.5.p.3">When the work is at a good point to form a stable version of the API, it is progressed through the IETF publication process with the goal of publishing an RFC. Once approved, the text of the RFC is used to form a released version of the API. The first version would be v1. The current working pre-standard version is always referred to as v0.  The API includes the version in the URL so that developers can implement to a specific non-changing specification. Future versions attempt, but do not guarantee, to be backwards-compatible with the previous version.  </p>
+<p id="rfc.section.A.5.p.3">When the work is at a good point to form a stable version of the API, it is progressed through the IETF publication process with the goal of publishing an RFC. Once approved, the text of the RFC is used to form a released version of the API. The first version would be v1. The current working pre-standard version is always referred to as v0 &lt;&gt;.  The API includes the version in the URL so that developers can implement to a specific non-changing specification. Future versions attempt, but do not guarantee, to be backwards-compatible with the previous version.  </p>
 <h1 id="rfc.authors">
   <a href="#rfc.authors">Author's Address</a>
 </h1>

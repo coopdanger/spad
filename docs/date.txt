@@ -1,2 +1,0 @@
-Generate docs from github commit 21046b6181b87c8051f7e9406c69fdcc6a686a98
-Sat Dec 17 04:49:27 UTC 2016
