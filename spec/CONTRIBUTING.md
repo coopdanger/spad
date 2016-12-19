@@ -30,7 +30,7 @@ Consensus for the resolution of an issue can be established in a few different w
 
 * Through discussion on the issues list. Once a resolution is found, it will be confirmed on the mailing list before consensus is declared.
 
-The editors can also propose resolutions for the group's consideration by incorporating them into the draft; when doing so, the issue should not be closed until consensus is declared.
+<<Add step here where editor writes a PR and there is strong indication of WG consensus at time of merge. And maybe delete bullet 1.>>
 
 Issues that have consensus will be labelled as `editor-ready`. After the editor has incorporated a resolution into the specification, the issue can be closed.
 
@@ -62,7 +62,7 @@ so that the draft can receive broader review.
 When the work is at a good
 point to form a stable version of the API, it is progressed through the IETF publication process with the goal of publishing an RFC. Once approved, the
 text of the RFC is used to form a released version of the API. The first version would be v1. The current working pre-standard
-version is always referred to as v0.  The API includes the version in
+version is always referred to as v0 <<current living standard version is always v0>>.  The API includes the version in
 the URL so that developers can implement to a specific non-changing
 specification. Future versions attempt, but do not guarantee, to be
 backwards-compatible with the previous version.
